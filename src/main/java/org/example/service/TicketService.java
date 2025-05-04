@@ -61,4 +61,16 @@ public class TicketService {
         return false;
     }
 
+    public Movie getMovieByName(String selectedMovieName) {
+        if (selectedMovieName != null || selectedMovieName.isEmpty()) {
+            return null;
+        }else {
+            for (Movie movie : movieList) {
+                if (movie.getName().equalsIgnoreCase(selectedMovieName)) {
+                    return movie;
+                }
+            }
+        }
+        return null;
+    }
 }
